@@ -1,13 +1,13 @@
 library(maftools)
-maf<-read.delim("./Data/maf_lof_or_pathogenic_2211.tsv")
+maf<-read.delim("./Data/maf_lof_or_pathogenic_CRC.tsv")
 tmb<-read_xlsx("./Data/df_b2m_tmb_metachr.xlsx")
-clinical<-read.delim("./Data/clinical_history_cancer.tsv")
+clinical<-read.delim("./Data/clinical_history_CRC.tsv")
 clinical$name<-gsub("_tumor","",clinical$tumor_sample)
 mafpaired<-maf[maf$Tumor_Sample_Barcode%in%clinical$name,]
 
 
 mafuro<-read.delim("./Data/Urothalial_maf_lof_or_pathogenic.tsv")
-clinicaluro<-read.delim("./Data/Nouscom_LS-UC17Dec.txt")
+clinicaluro<-read.delim("./Data/UC_clinical_data.txt")
 clinicaluro<-clinicaluro[clinicaluro$Location%in%c("Bladder","UTUC"),]
 uromapping<-read.delim("./Data/Patient_ID_sampleCegat_pair_tumor_normal.txt")
 uromapping$sample_pair<-paste0("S000021_",uromapping$sample_pair)
@@ -75,37 +75,6 @@ dev.off()
 
 
 
-
-
-
-
-
-
-
-
-
-
-library(maftools)
-
-# Calculate mutation burden per sample
-mut_burden <- getSampleSummary(totmaf)
-
-# Get clinical annotations
-anno_df <- totmaf@clinical.data
-
-# Merge mutation data with annotations
-combined_df <- merge(mut_burden, anno_df, by.x = "Tumor_Sample_Barcode", by.y = "Tumor_Sample_Barcode")
-dim(combined_df)
-# Sort by annotation (e.g., Subtype) and mutation count
-combined_df <- combined_df[order(combined_df$Tumor_Sample_Barcode, combined_df$total, decreasing = FALSE), ]
-
-# Extract ordered sample list
-ordered_samples <- combined_df$Tumor_Sample_Barcode
-
-# Plot oncoplot with custom sample order and annotation
-oncoplot(maf = totmaf,
-         clinicalFeatures = "N_tumor",
-         sampleOrder = ordered_samples,genes = genes)
 
 
 
