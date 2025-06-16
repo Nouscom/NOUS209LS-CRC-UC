@@ -11,8 +11,8 @@ Lynch syndrome (LS) is characterized by the development of microsatellite instab
 Key findings include:
 
 - High presence of frameshift mutations (FSMs) targeted by the NOUS-209 vaccine in both colorectal (CRC) and urothelial cancers (UC) in Lynch syndrome.
-- Evidence of immune editing in matched primary-metachronous tumors.
 - Continued generation of novel immunogenic FSMs in subsequent tumors, supporting the rationale for NOUS-209-based immune interception.
+- Evidence of immune editing in matched primary-metachronous tumors.
 
 ## About This Repository
 
