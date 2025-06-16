@@ -29,7 +29,10 @@ The analysis was performed using R (version >= 4.3). Specific package requiremen
 
 ## Contact
 
-For access to input data or further information, please contact:
+
+The input files necessary to reproduce the analyses and generate the plots **may be made available from the corresponding author upon reasonable request and subject to institutional approval**.
+
+For further information, please contact:
 
 Elisa Micarelli; Lorenzo De Marco
 NOUSCOM SRL
