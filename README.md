@@ -20,7 +20,7 @@ This repository contains the **R scripts used to generate the main figures** pre
 
 > **Note:** The final figures in the manuscript have been **further refined using graphic design software**. The scripts here generate the base plots prior to aesthetic adjustments.
 
-- All scripts are organized by figure number and functionality.
+- All scripts are organized by figure number.
 - Data inputs required to run the scripts are **available upon request**.
 
 ## Requirements
@@ -28,7 +28,6 @@ This repository contains the **R scripts used to generate the main figures** pre
 The analysis was performed using R (version >= 4.3). Specific package requirements are listed at the beginning of each script.
 
 ## Contact
-
 
 The input files necessary to reproduce the analyses and generate the plots **may be made available from the corresponding author upon reasonable request and subject to institutional approval**.
 
