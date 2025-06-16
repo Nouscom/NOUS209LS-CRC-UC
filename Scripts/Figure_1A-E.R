@@ -11,7 +11,7 @@ library(ggvenn)
 
 ########## FIG 1 A
 
-clinical<-read.delim("./Data/clinical_history_cancer.tsv")
+clinical<-read.delim("./Data/clinical_history_CRC.tsv")
 clinical<-clinical[order(clinical$NOUS209,decreasing = T),]
 clinical$ID<-paste0("",1:nrow(clinical))
 p1<-ggplot(clinical)+geom_bar(aes(x=reorder(ID,-NOUS209),y=NOUS209),
@@ -74,7 +74,7 @@ dev.off()
 
 
 ########### Fig 1 B
-clinical<-read.delim("./Data/Summary_MNR_NOUS209FSP_UROTHELIAL_LOOKUP_hg38.txt")
+clinical<-read.delim("./Data/NOUS209FSP_UC.txt")
 info<-read.delim("./Data/Nouscom_LS-UC17Dec.txt")
 info$SampleID<-sub("^([^\\-]+-[^\\-]+)-.*", "\\1", info$Sample)
 clinical$PatientID<-sub("_.*", "\\1", clinical$Patient)
@@ -129,9 +129,9 @@ dev.off()
 
 ######### FIG 1 E
 
-msisensor<-read.delim("./Data/Summary_MSISensor_NEW_DATA_UROTHELIAL_Seppala_2025.tsv")
+msisensor<-read.delim("./Data/MSISensor_UC.tsv")
 
-clinical<-read.delim("./Data/Nouscom_LS-UC17Dec.txt")
+clinical<-read.delim("./Data/UC_clinical_data.txt")
 head(clinical)
 
 clinical$SampleID<-sub("^([^\\-]+-[^\\-]+)-.*", "\\1", clinical$Sample)
@@ -190,8 +190,8 @@ dev.off()
 
 
 
-Urothelial<-read.delim("./Data/NOUS209_Urothelial_lookup_allsamples.tsv")
-info<-read.delim("./Data/Nouscom_LS-UC17Dec.txt")
+Urothelial<-read.delim("./Data/NOUS209FSP_UC.tsv")
+info<-read.delim("./Data/UC_clinical_data")
 info_keep<-info[info$Location%in%c("UTUC","Bladder"),]
 info_remove<-info[!info$Location%in%c("UTUC","Bladder"),]
 
@@ -202,7 +202,7 @@ Urothelial$PatientID_folder<-sub("_blood", "",Urothelial$Patient)
 Urothelial<-Urothelial[!Urothelial$PatientID_folder%in%info_remove$SampleID,]
 
 
-CRC<-read.delim("./Data/total_FSP_NOUS209SEPPALA.tsv")
+CRC<-read.delim("./Data/NOUS209FSP_CRC.tsv")
 clinical<-read.delim("./Data/clinical_history_cancer.tsv")
 clinical$name<-gsub("_tumor","",clinical$tumor_sample)
 CRC<-CRC[CRC$SAMPLE%in%clinical$name,]
