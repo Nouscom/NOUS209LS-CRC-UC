@@ -16,7 +16,7 @@ Key findings include:
 
 ## About This Repository
 
-This repository contains the **R scripts used to generate the main figures and plots** presented in the publication.
+This repository contains the **R scripts used to generate the main figures** presented in the publication.
 
 > **Note:** The final figures in the manuscript have been **further refined using graphic design software**. The scripts here generate the base plots prior to aesthetic adjustments.
 
