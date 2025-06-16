@@ -31,9 +31,9 @@ The analysis was performed using R (version >= 4.3). Specific package requiremen
 
 For access to input data or further information, please contact:
 
-Elisa Micarelli, Lorenzo De Marco
+Elisa Micarelli; Lorenzo De Marco
 NOUSCOM SRL
-e.micarelli@nouscom.com ; l.demarco@nouscom.com
+e.micarelli@nouscom.com; l.demarco@nouscom.com
 
 
 
