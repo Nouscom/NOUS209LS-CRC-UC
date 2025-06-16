@@ -7,11 +7,11 @@ library(ggprism)
 
 ############ Fig 2A
 
-clinical<-read.delim("./Data/clinical_history_cancer.tsv")
-infouro<-read.delim("./Data/Nouscom_LS-UC17Dec.txt")
+clinical<-read.delim("./Data/clinical_history_CRC.tsv")
+infouro<-read.delim("./Data/UC_clinical_data.txt")
 
 infouro<-infouro[infouro$Location%in%c("Bladder","UTUC"),]
-summary_urothelial<-read.delim("./Data/Summary_MNR_NOUS209FSP_UROTHELIAL_LOOKUP_hg38.txt")
+summary_urothelial<-read.delim("./Data/NOUS209FSP_UC.txt")
 summary_urothelial$Patient<-gsub("_blood","",summary_urothelial$Patient)
 
 summaryUrothelial<-summary_urothelial[summary_urothelial$Patient%in%infouro$SampleID,]
@@ -64,8 +64,8 @@ dev.off()
 
 
 ############# Fig 2 B
-crc_clinical<-read.delim("./Data/clinical_history_cancer.tsv")
-urothelial_clinical<-read_xlsx("./Data/Nouscom LS-UC Clinical Data_2024-Dec-17.xlsx")
+crc_clinical<-read.delim("./Data/clinical_history_CRC.tsv")
+urothelial_clinical<-read_xlsx("./Data/UC_clinical_data.xlsx")
 dim(urothelial_clinical)
 
 
@@ -172,7 +172,7 @@ ggsave("./Output/Fig_2D_NOUS209grouptumor.svg",dpi=300,
 
 
 ################## Fig 2 E e 2F
-clinicalcrc<-read.delim("./Data/clinical_history_cancer.tsv")
+clinicalcrc<-read.delim("./Data/clinical_history_CRC.tsv")
 clinicalcrc$Stagebis<-ifelse(clinicalcrc$Stage=="I","I","II-III")
 
 svg("./Output/Fig_2E_NOUS209StageCRC.svg",height=4,
@@ -197,7 +197,7 @@ ggsave("./Output/Fig_2E_NOUS209StageCRC.svg",dpi=300,
 
 
 
-clinicaluro<-read.delim("./Data/Nouscom_LS-UC17Dec.txt")
+clinicaluro<-read.delim("./Data/UC_clinical_data.txt")
 clinicaluro<-clinicaluro[clinicaluro$Location%in%c("Bladder","UTUC"),]
 
 nousuro<-read.delim("./Data/Summary_MNR_NOUS209FSP_UROTHELIAL_LOOKUP_hg38.txt")
@@ -244,7 +244,7 @@ ggsave("./Output/Fig_2E_NOUS209StageUC.svg",dpi=300,
 
 
 
-clinicalcrc<-read.delim("./Data/clinical_history_cancer.tsv")
+clinicalcrc<-read.delim("./Data/clinical_history_CRC.tsv")
 
 svg("./Output/Fig_2F_NOUS209Lymph.svg",height=4,
     width = 3.5)
@@ -267,10 +267,10 @@ ggsave("./Output/Fig_2F_NOUS209LymphoInvasion.svg",dpi=300,
 
 
 
-clinicaluro<-read.delim("./Data/Nouscom_LS-UC17Dec.txt")
+clinicaluro<-read.delim("./Data/UC_clinical_data.txt")
 clinicaluro<-clinicaluro[clinicaluro$Location%in%c("Bladder","UTUC"),]
 
-nousuro<-read.delim("./Data/Summary_MNR_NOUS209FSP_UROTHELIAL_LOOKUP_hg38.txt")
+nousuro<-read.delim("./Data/NOUS209FSP_UC.txt")
 nousuro$Patient<-gsub("_blood","",nousuro$Patient)
 clinicaluro<-merge(clinicaluro,nousuro,by.x="SampleID",by.y="Patient")
 
