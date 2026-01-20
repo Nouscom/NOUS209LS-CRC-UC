@@ -47,7 +47,7 @@ This repository accompanies the publication:
 > **NOUS-209 Off-the-shelf Immunotherapy Has the Potential to Hit Primary and Metachronous Colorectal and Urothelial Cancers in Lynch Syndrome**  
 > De Marco L., Micarelli E., Panula J. et al  
 > *Molecular Cancer Therapeutics* (2025)  
-> [https://doi.org/xx.xxxx/xxxxx](https://doi.org/10.1158/1535-7163.MCT-25-0864)
+> [DOI] (https://doi.org/10.1158/1535-7163.MCT-25-0864)
 
 The scripts provided here reproduce the figures in the manuscript.
 If you use this repository in your research, please cite the paper.
